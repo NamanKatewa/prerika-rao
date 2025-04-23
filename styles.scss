@@ -1,0 +1,41 @@
+@font-face {
+    font-family: 'Dosis';
+    src: url('/assets/fonts/Dosis.ttf') format('truetype'),
+}
+
+@font-face {
+    font-family: 'Catamaran';
+    src: url('/assets/fonts/Catamaran.ttf') format('truetype'),
+}
+
+$background-color: #ffffff;
+$accent-color: #e7f5dd;
+$text-color: #797978;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Dosis;
+    background-color: $background-color;
+    color: $text-color;
+    display: flex;
+    height: 100vh;
+
+    .navigation {
+        flex: 1;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .main {
+        flex: 2;
+        height: 100%;
+    }
+}
