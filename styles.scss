@@ -24,18 +24,171 @@ body {
     color: $text-color;
     display: flex;
     height: 100vh;
+    width: 100vw;
+    overflow: hidden;
 
     .navigation {
-        flex: 1;
+        width: 30vw;
         height: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: space-between;
+
+        .up {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex: 1;
+            gap: 40px;
+
+            a {
+                text-decoration: none;
+                color: inherit;
+            }
+
+            h1 {
+                font-size: 30px;
+                letter-spacing: 2px;
+            }
+
+            .links {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+
+                a {
+                    font-size: 23px;
+                    font-weight: 700;
+                    letter-spacing: 2px;
+                    position: relative;
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        left: 0;
+                        bottom: 0;
+                        height: 1px;
+                        width: 0;
+                        background-color: $text-color;
+                        transition: width 0.3s ease;
+                    }
+
+                    &:hover::after {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+        .down {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: end;
+            padding-bottom: 20px;
+            gap: 10px;
+
+            img {
+                width: 40px;
+                border-radius: 50%;
+            }
+
+            p {
+                font-size: 15px;
+                font-weight: 600;
+                letter-spacing: 0.5px;
+            }
+        }
     }
 
     .main {
-        flex: 2;
-        height: 100%;
+        width: 60vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+
+        .about {
+            width: 60vw;
+            height: 30vh;
+            background-color: $accent-color;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 100px;
+            padding-bottom: 20px;
+
+            #main {
+                width: 80%;
+                text-align: center;
+                font-weight: 600;
+                letter-spacing: 1px;
+            }
+
+            #more {
+                font-weight: 500;
+                display: flex;
+                gap: 10px;
+                letter-spacing: 1px;
+
+                a {
+                    text-decoration: none;
+                    color: inherit;
+                    position: relative;
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        left: 0;
+                        bottom: 0;
+                        height: 1px;
+                        width: 0;
+                        background-color: $text-color;
+                        transition: width 0.3s ease;
+                    }
+
+                    &:hover::after {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+        .work {
+            width: 60vw;
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+
+            div {
+                width: 60vw;
+                display: flex;
+                flex: 1;
+
+                img {
+                    width: 33.33%;
+                }
+            }
+
+
+            // .images {
+            //     display: grid;
+            //     grid-template-columns: repeat(3, 1fr);
+            //     grid-template-rows: repeat(3, 1fr);
+            //     gap: 5px;
+
+            //     img {
+            //         height: 100%;
+            //         width: 100%;
+            //         object-fit: cover;
+            //         display: block;
+            //     }
+            // }
+        }
+
     }
 }
